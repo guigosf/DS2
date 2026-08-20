@@ -1,0 +1,26 @@
+{
+  "name": "encurtadordelink",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/MartinsDevStart/DS2#readme",
+  "bugs": {
+    "url": "https://github.com/MartinsDevStart/DS2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinsDevStart/DS2.git"
+  },
+  "license": "ISC",
+  "author": "Pedro Martins",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
