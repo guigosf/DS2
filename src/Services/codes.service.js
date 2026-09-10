@@ -1,5 +1,5 @@
-function codesService(counterRepository, toBase62, blockSize) {
-    var nest = 0;
+function codesService(counterRepository, toBase62, blockSize = 1000) {
+    var next = 0;
     var limit = 0;
 
     async function nextCode() {
@@ -8,8 +8,10 @@ function codesService(counterRepository, toBase62, blockSize) {
             limit = next + blockSize;
         }
 
-        const code = toBase62(next++);
-
         return toBase62(next++);
     }
+
+    return { nextCode };
 }
+
+module.exports = codesService;

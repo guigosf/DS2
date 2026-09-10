@@ -1,3 +1,4 @@
+
 function fail(status, code, message) {
     const error = new Error(message);
     error.status = status;
@@ -48,7 +49,7 @@ function linksService(retentionYears, maxUrlLength) {
 
         const code = await codeService.nesxtCode();
         await linksRepository.save(code, {originalUrl, createdAt,
-        expiresAt})
+        expiresAt});
 
         return { code, originalUrl, createdAt, expiresAt };
     }
