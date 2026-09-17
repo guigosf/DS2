@@ -1,4 +1,4 @@
-function codesService(counterRepository, toBase62, blockSize = 1000) {
+function codesService(counterRepository, baseService, blockSize = 1000) {
     var next = 0;
     var limit = 0;
 
@@ -8,7 +8,7 @@ function codesService(counterRepository, toBase62, blockSize = 1000) {
             limit = next + blockSize;
         }
 
-        return toBase62(next++);
+        return baseService.toBase62(next++);
     }
 
     return { nextCode };

@@ -1,6 +1,4 @@
-const { json, redirect } = require("express/lib/response");
-
-function linksController() {
+function linksController(linksService, baseUrl, cacheSeconds) {
     function formatResponse(link) {
         return {
             code: link.code,
@@ -27,8 +25,8 @@ function linksController() {
             try {
                 const code = request.params.code;
                 const link = await linksService.resolve(code);
-             
-                response.set("Cache-Control", "public, max-age=300")
+
+                response.set("Cache-Control", "public, max-age=" + cacheSeconds);
                 response.redirect(302, link.originalUrl);
             } catch (error) {
                 next(error);
@@ -36,3 +34,5 @@ function linksController() {
         }
     };
 }
+
+module.exports = linksController;

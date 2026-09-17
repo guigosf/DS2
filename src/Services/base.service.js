@@ -13,4 +13,10 @@ function baseService(alphabet) {
 
         return code;
     }
+
+    return {
+        toBase62,
+    }
 }
+
+module.exports = baseService;

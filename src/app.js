@@ -3,18 +3,21 @@ const express = require ("express");
 const codesService = require("./services/codes.service");
 const baseService = require("./services/base.service");
 const linksService = require("./services/links.service");
-const counterRepository = require("./repositories/memory/counter.repository");
-const linksRepository = require("./repositories/memory/links.repsitory");
 const linksController = require("./controllers/links.controller");
+const createLinksRoutes = require("./routes/links.routes");
 
-const app = express();
-
-function startApp() {
+function startApp({counterRepository, linksRepository }) {
     const codes = codesService(counterRepository, baseService, 1000);
 
-    const links = linksService(linksRepository, codesService, 10,256);
+    const links = linksService(linksRepository, codes, 10,256);
 
-    const linksRouteController = linksController(linksService, "/", 30)
+    const linksRouteController = linksController(links, "/", 30)
+
+    const app = express();
+    app.use(express.json());
+    app.use(createLinksRoutes(linksRouteController));
+
+    return app;
 }
 
-module.exports = app;
+module.exports = startApp;

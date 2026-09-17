@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MartinsDevStart/DS2.git"
+    "url": "git+https://https://github.com/guigosf/DS2.git"
   },
   "license": "ISC",
   "author": "Pedro Martins",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon ./src/server.js"
   },
   "dependencies": {
     "express": "^5.2.1"
