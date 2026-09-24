@@ -1,5 +1,4 @@
 const { Router } = require("express");
-const { link } = require("../app");
 
 function createLinksRoutes(linksController) {
     const router = Router();

@@ -8,6 +8,7 @@ function linksController(linksService, baseUrl, cacheSeconds) {
             expiresAt: link.expiresAt.toISOString(),
         }
     }
+
     return {
         async shorten (request, response, next) {
             try {

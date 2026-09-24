@@ -1,8 +1,3 @@
-const { links } = require("express/lib/response");
-
-
-
-
 function fail(status, code, message) {
     const error = new Error(message);
     error.status = status;
@@ -49,10 +44,10 @@ function linksService(linksRepository, codesService, retentionYears, maxUrlLengt
 
         const createdAt = new Date();
         const expiresAt = new Date(createdAt);
-        expiresAt.setUTCFullYear(expiresAt.getUTCFullYear + 
+        expiresAt.setUTCFullYear(expiresAt.getUTCFullYear() + 
         retentionYears);
 
-        const code = await codesService.nesxtCode();
+        const code = await codesService.nextCode();
         await linksRepository.save(code, {originalUrl, createdAt,
         expiresAt});
 
