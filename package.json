@@ -15,10 +15,14 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/server.js"
+    "dev": "nodemon ./server.js",
+    "openapi": "node ./scripts/generate-openapi.js",
+    "openapi:lint": "npx @redocly/cli lint ./src/docs/openapi.json"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "swagger-jsdoc": "^6.3.0",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

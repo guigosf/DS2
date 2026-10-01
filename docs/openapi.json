@@ -1,0 +1,16 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Encurtador de URLs - DS2",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "security": [],
+  "paths": {},
+  "components": {},
+  "tags": []
+}

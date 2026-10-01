@@ -1,4 +1,18 @@
 function linksController(linksService, baseUrl, cacheSeconds) {
+    /**
+     * @openapi
+     * components:
+     *   schemas:
+     *     Link:
+     *       type: object
+     *       required: [code, url, originalUrl, createdAt, expiresAt]
+     *       properties:
+     *         code: { type: string, example: "G8z3"}
+     *         url: { type: string, format: uri, example: "https://localhost:3000/G8z3" }
+     *         originalUrl: { type: string, format: uri, example: "https://www.etec.sp.gov.br" }
+     *         createdAt: { type: string, format: date-time }
+     *         expiresAt: { type: string, format: date-time }
+     */
     function formatResponse(link) {
         return {
             code: link.code,
