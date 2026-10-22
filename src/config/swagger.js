@@ -1,11 +1,11 @@
 const path = require('node:path');
-const { version } = require("../../package-lock.json");
-
 const swaggerJsdoc = require("swagger-jsdoc")
+
+const { version } = require("../../package-lock.json");
 
 const swaggerSpec = {
     failOnErrors: true,
-    apis: [path.join(__dirname, '../**/*.js')],
+    apis: [path.join(__dirname, '../**/*.js').replace(/\\/g, "/")],
     definition: {
         openapi:'3.0.3',
         info: {
