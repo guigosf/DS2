@@ -11,11 +11,12 @@
     "url": "git+https://https://github.com/guigosf/DS2.git"
   },
   "license": "ISC",
-  "author": "Pedro Martins",
+  "author": "Guilherme",
   "type": "commonjs",
   "main": "./src/server.js",
   "scripts": {
     "dev": "nodemon -w ./src/server.js",
+    "start": "node ./src/server.js",
     "openapi": "node ./scripts/generate-openapi.js",
     "openapi:lint": "npx @redocly/cli lint ./src/docs/openapi.json"
   },
